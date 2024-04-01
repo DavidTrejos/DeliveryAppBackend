@@ -4,9 +4,7 @@ const User = {};
 
 
 User.create = (user, result) => {
-
     const sql =  `
-
             INSERT INTO
                 users(
                     email,
@@ -14,15 +12,14 @@ User.create = (user, result) => {
                     name,
                     lastname,
                     phone,
-                    image,
                     created_at,
                     updated_at
                 )
-            VALUES(?,?,?,?,?,?,?,?)
-       
+
+            VALUES(?, ?, ?, ?, ?, ?, ?) 
     `;
     db.query
-    {
+    (
         sql,
         [
             user.email,
@@ -30,7 +27,6 @@ User.create = (user, result) => {
             user.name,
             user.lastname,
             user.phone,
-            user.image,
             new Date(),
             new Date()
         ],
@@ -44,7 +40,7 @@ User.create = (user, result) => {
                 result(null,res.insertId);
             }
         }
-    }
+    )
 }
 
 module.exports = User;

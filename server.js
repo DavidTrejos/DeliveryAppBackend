@@ -11,7 +11,7 @@
 
  const usersRoutes = require('./routes/userRoutes')
 
- const port = process.env.PORT || 3000;
+ const port = process.env.PORT || 9001;
 
  app.use(logger('dev'));
  app.use(express.json());
@@ -29,7 +29,7 @@
 
  usersRoutes(app);
 
- server.listen(3000, '192.168.1.74' || 'localhost', function(){
+ server.listen(9001, '192.168.1.74' || 'localhost' ||'127.0.0.1', function(){
     console.log('Aplicación de NodeJS ' + port + ' Iniciada...')
  });
 
