@@ -4,6 +4,7 @@
  const server = http.createServer(app);
  const logger = require('morgan');
  const cors = require('cors');
+ const passport = require('passport');
 
  /*
  * IMPORT ROUTES
@@ -19,6 +20,10 @@
     extended: true
  }));
  app.use(cors());
+ app.use(passport.initialize());
+ app.use(passport.session());
+
+ require('./config/passport')(passport);
  app.disable('x-powered-by');
 
  app.set('port',port);

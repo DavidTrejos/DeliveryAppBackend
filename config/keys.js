@@ -1,0 +1,3 @@
+module.exports = {
+    secretOrKey:'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOAWX2P7UGNwAYQoVgNhBsDX+m4yPN6tnV6QKBYi5g+FYf9gV2PbIK7ajW/dAO8Cstv0myBw+cWhELWexa1g0WECAwEAAQ=='
+}
