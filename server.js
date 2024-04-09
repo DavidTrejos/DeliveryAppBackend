@@ -5,6 +5,7 @@
  const logger = require('morgan');
  const cors = require('cors');
  const passport = require('passport');
+ const multer = require('multer');
 
  /*
  * IMPORT ROUTES
@@ -28,13 +29,17 @@
 
  app.set('port',port);
 
+ const upload = multer({
+      storage: multer.memoryStorage()
+ });
+
  /*
  * CALL ROUTES
  */
 
- usersRoutes(app);
+ usersRoutes(app,upload);
 
- server.listen(9001, '192.168.1.74' || 'localhost' ||'127.0.0.1', function(){
+ server.listen(9001, '192.168.1.4' || 'localhost' ||'127.0.0.1', function(){
     console.log('Aplicación de NodeJS ' + port + ' Iniciada...')
  });
 
